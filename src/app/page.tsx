@@ -3,10 +3,16 @@ import Link from "next/link";
 export default function Home() {
   return (
     <div>
-      <h1>Welcome to aido</h1>
-      <Button>
-        <Link style={{textDecoration: "none"}} href = {"/Home"} >Go Home</Link>
-      </Button>
+      <div className="h-screen flex justify-center items-center">
+        <div className=" w-[1152px] text-center">
+          <h1 className="text-3xl font-bold h-auto">Welcome to aido company.</h1>
+          <Button className="my-3">
+            <Link style={{ textDecoration: "none" }} href={"/Home"}>
+              Go Home
+            </Link>
+          </Button>
+        </div>
+      </div>
     </div>
   );
 }
