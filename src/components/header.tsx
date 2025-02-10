@@ -26,7 +26,9 @@ export default function Header() {
             <Button variant={"link"}>Technology Page</Button>
           </li>
           <li>
-            <Button className="h-[40px]">React out to us</Button>
+            <Button className="h-[40px]">
+             <Link href={"/contact"}> React out to us</Link>
+            </Button>
           </li>
         </ul>
       </div>
