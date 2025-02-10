@@ -60,9 +60,9 @@ export default function ContactUs() {
     console.log(values);
   }
   return (
-    <div className="w-screen h-auto flex justify-center items-center">
+    <div className="w-full h-auto flex justify-center items-center my-16">
       {/* Content */}
-      <div className="w-[1152px] h-auto flex justify-between items-center mx-4 flex-wrap-reverse">
+      <div className="w-[1152px] h-auto flex justify-between items-center flex-wrap-reverse">
         {/* Form contact */}
         <Card className=" max-w-sm w-full bg-white border-0 mt-8">
           {/* Title */}
