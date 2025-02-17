@@ -1,8 +1,13 @@
-import OpeningStatement from "./openingStatement/page";
-export default function Home() {
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import OpeningStatement from "../components/openingStatement";
+import Home from "./home/page";
+import Header from "@/components/header";
+import Footer from "@/components/footer";
+export default function Landing() {
   return (
     <div>
-        <OpeningStatement/>
+        <Home/>
     </div>
   );
 }
