@@ -1,4 +1,5 @@
 "use client"
+
 import Image from "next/image";
 import Message from "@/components/message";
 export default function Maintenance() {

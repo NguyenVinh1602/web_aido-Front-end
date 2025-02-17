@@ -1,28 +1,40 @@
-import { Button } from "@/components/ui/button";
+import  Link  from 'next/link';
+import { Button } from './ui/button';
+import { HamburgerMenuIcon } from '@radix-ui/react-icons';
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+} from "@/components/ui/sheet"
+import MobileNav from './mobile-navbar';
 
 export default function Header() {
   return (
-    <div className="w-screen flex justify-center">
-      <div className="w-[1152px] h-auto flex justify-between items-center pb-2 border-b border-gray-500">
-        <div className="text-m">Logo</div>
-        <ul className="w-[700px] flex justify-between items-center">
+    <header className="fixed w-full top-0 z-10 flex justify-center px-8 bg-white">
+      <div className="container flex justify-between items-center py-2 border-b border-gray-500 backdrop-blur ">
+        <Link className="text-lg font-bold md:text-xl" href={"/"}>
+          AIdo.
+        </Link>
+        <ul className="hidden lg:flex w-full justify-end items-center space-x-12">
+          <li><Link href={"/"}>Home</Link></li>
+          <li><Link href={"/"}>About</Link></li>
+          <li><Link href={"/blog"}>Blog</Link></li>
+          <li><Link href={"/"}>Technology Page</Link></li>
           <li>
-            <Button variant={"link"}>First Page</Button>
-          </li>
-          <li>
-            <Button variant={"link"}>Second Page</Button>
-          </li>
-          <li>
-            <Button variant={"link"}>Blog</Button>
-          </li>
-          <li>
-            <Button variant={"link"}>Technology Page</Button>
-          </li>
-          <li>
-            <Button className="h-[40px]">React out to us</Button>
+            <Button>
+              <Link href={"/"}>Reach out to us</Link>
+            </Button>
           </li>
         </ul>
+        <Sheet>
+          <SheetTrigger>
+            <HamburgerMenuIcon className='size-6 lg:hidden' />
+          </SheetTrigger>
+          <SheetContent>
+            <MobileNav />
+          </SheetContent>
+        </Sheet>
       </div>
-    </div>
+    </header>
   );
 }
