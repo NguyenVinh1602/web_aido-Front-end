@@ -1,7 +1,6 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Phone } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import {
@@ -13,7 +12,6 @@ import {
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -22,6 +20,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
+import Image from "next/image";
 
 export default function ContactUs() {
   //Object check
@@ -64,7 +63,7 @@ export default function ContactUs() {
       {/* Content */}
       <div className="w-[1152px] h-auto flex justify-between items-center flex-wrap-reverse">
         {/* Form contact */}
-        <Card className=" max-w-sm w-full bg-white border-0 mt-8">
+        <Card className="max-w-sm w-full bg-white  mt-8">
           {/* Title */}
           <CardHeader>
             <CardTitle className="text-3xl font-bold">Contact Us</CardTitle>
@@ -194,11 +193,13 @@ export default function ContactUs() {
             </form>
           </Form>
         </Card>
-        <img 
-          src="/test.png" 
-          alt="test" 
-          className="h-[85svh] mt-8"
-        />
+          <Image 
+            src="/test.png"
+            alt="test"
+            className="mt-8"
+            width={500}
+            height={300} 
+          />
         
       </div>
     </div>
