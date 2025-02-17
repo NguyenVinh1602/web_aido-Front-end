@@ -70,3 +70,9 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+.custom-swiper .swiper-button-prev, 
+.custom-swiper .swiper-button-next {
+  color: black !important; /* Đổi màu mũi tên */
+  opacity: 0;
+}
