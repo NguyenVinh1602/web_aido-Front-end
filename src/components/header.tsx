@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 
 export default function Header() {
   const pathname = usePathname();
+  const isHome = pathname === "/" || pathname ==="/Home";
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
@@ -32,7 +33,7 @@ export default function Header() {
   }, []);
   return (
     <header
-      className={`w-full fixed top-0 z-10 flex justify-center px-8 bg-white`}
+    className={`w-full z-10 flex justify-center px-8 bg-white ${isHome ? "fixed top-0" : "relative"}`}
     >
       <LoadingBar
         color="#6028ff"

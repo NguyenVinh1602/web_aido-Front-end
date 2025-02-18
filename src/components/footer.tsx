@@ -1,9 +1,9 @@
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 export default function Footer() {
   return (
-    <div className="h-[350px] flex justify-center bg-black text-white">
+    <div className="w-full h-[350px] absolute flex justify-center bg-black text-white">
       <div className="w-[1152px] h-auto justify-between my-10">
         <div className="text-m w-full flex justify-between">
           Logo
