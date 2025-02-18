@@ -57,10 +57,20 @@ export default function SignUp() {
     console.log(values);
   }
   return (
-    <div className="min-h-screen bg-white flex items-center justify-center flex-wrap">
-      <div className="w-1/2 h-auto flex justify-center pb-10">Logo</div>
-      <div className="w-1/2 h-auto">
-        <Card className=" max-w-sm w-full bg-white border-0 shadow-none">
+    <div className="min-h-screen flex items-center justify-center flex-wrap">
+      {/* Left Section */}
+      <div className="w-full max-w-md flex flex-col justify-center text-left mt-10 px-8">
+        <h1 className="text-4xl font-bold mb-6">AIdoIT!</h1>
+        <p className="text-lg text-gray-700 mb-4">
+          Explore the future of AI-driven innovation with our IT solutions.
+        </p>
+        <p className="text-lg text-gray-700">
+          Join us in turning AI research into reality through advanced
+          technology and creative thinking.
+        </p>
+      </div>
+      <div className="w-full max-w-md px-8">
+        <Card>
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
               <FormField
@@ -73,7 +83,7 @@ export default function SignUp() {
                       <FormControl>
                         <Input
                           {...field}
-                          className="w-full bg-white  text-black border border-gray-700 focus:outline-none focus:ring focus:ring-orange-500 py-5"
+                          className="w-full text-black border border-gray-700 focus:outline-none focus:ring focus:ring-orange-500 py-5"
                           name="email"
                           autoComplete="off"
                         />
@@ -148,7 +158,7 @@ export default function SignUp() {
               <div className="flex items-center justify-center">
                 <Button className="p-0" variant={"link"}>
                   <Link href={"/login"} className="text-sm">
-                    I have a account
+                    I have an account
                   </Link>
                 </Button>
               </div>

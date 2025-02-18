@@ -1,5 +1,4 @@
-import Message from "@/components/message";
-import Image from "next/image";
+
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 

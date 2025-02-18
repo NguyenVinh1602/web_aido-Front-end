@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form"
+import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -45,10 +45,22 @@ export default function Login() {
     console.log(values);
   }
   return (
-    <div className="min-h-screen bg-white flex items-center justify-center flex-wrap">
-      <div className="w-1/2 h-auto flex justify-center pb-10">Logo</div>
-      <div className="w-1/2 h-auto">
-        <Card className=" max-w-sm w-full bg-white border-0">
+    <div className="min-h-screen flex items-center justify-center flex-wrap">
+      {/* Left Section */}
+      <div className="w-full max-w-md flex flex-col justify-center text-left mt-10 px-8">
+        <h1 className="text-4xl font-bold mb-6">AIdoIT!</h1>
+        <p className="text-lg text-gray-700 mb-4">
+          Explore the future of AI-driven innovation with our IT solutions.
+        </p>
+        <p className="text-lg text-gray-700">
+          Join us in turning AI research into reality through advanced
+          technology and creative thinking.
+        </p>
+      </div>
+
+      {/* Right Section */}
+      <div className="w-full max-w-md px-8">
+        <Card>
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
               <FormField
@@ -57,13 +69,11 @@ export default function Login() {
                 render={({ field }) => (
                   <FormItem>
                     <div className="relative">
-                      <FormLabel>
-                        Email
-                      </FormLabel>
+                      <FormLabel>Email</FormLabel>
                       <FormControl>
                         <Input
                           {...field}
-                          className="w-full bg-white  text-white border border-gray-700 focus:outline-none focus:ring focus:ring-orange-500 py-5"
+                          className="w-full text-black border border-gray-700 focus:outline-none focus:ring focus:ring-orange-500 py-5"
                           name="email"
                           autoComplete="off"
                         />
@@ -79,13 +89,11 @@ export default function Login() {
                 render={({ field }) => (
                   <FormItem>
                     <div className="relative">
-                      <FormLabel>
-                        Password
-                      </FormLabel>
+                      <FormLabel>Password</FormLabel>
                       <FormControl>
                         <Input
                           {...field}
-                          className="w-full bg-white text-black border border-gray-700 focus:outline-none focus:ring focus:ring-orange-500 py-5"
+                          className="w-full text-black border border-gray-700 focus:outline-none focus:ring focus:ring-orange-500 py-5"
                           type={showPassword ? "text" : "password"}
                           name="pass"
                           autoComplete="off"
