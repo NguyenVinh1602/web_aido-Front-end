@@ -1,28 +1,30 @@
-import React from 'react'
-import Link from 'next/link'
-import { buttonVariants } from './ui/button'
-
+import React from "react";
+import Link from "next/link";
+import { Button } from "./ui/button";
 const MobileNav = () => {
-    return (
+  return (
     <div>
-        <ul className="flex flex-col gap-4">
-            <li>
-            <Link href="/" className="hover:text-primary transition-colors font-bold">Home</Link>
-            </li>
-            <li>
-            <Link href="/about" className="">About</Link>
-            </li>
-            <li>
-            <Link href="/contact" className="">Reach out to us</Link>
-            </li>
-
-            <div className="buttons gap-2 flex text-xsm">
-            <Link className={buttonVariants({ variant: "secondary" })} href="/login">Login</Link>  
-            <Link className={buttonVariants({ variant: "secondary" })} href="/login">Signup</Link> 
-            </div>
-        </ul>
+      <ul className="flex flex-col gap-4">
+        <li>
+          <Link href={"/"}>Home</Link>
+        </li>
+        <li>
+          <Link href={"/"}>Service</Link>
+        </li>
+        <li>
+          <Link href={"/contact"}>Contact</Link>
+        </li>
+        <li>
+          <Link href={"/blog"}>Blog</Link>
+        </li>
+        <li>
+          <Button>
+            <Link href={"/login"}>Reach out to us</Link>
+          </Button>
+        </li>
+      </ul>
     </div>
-  )
-}
+  );
+};
 
-export default MobileNav
+export default MobileNav;

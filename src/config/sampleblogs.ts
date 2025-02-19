@@ -21,19 +21,19 @@ const sampleBlogs: Blog[] = [
     },
     {
       id: 2,
-      title: "Understanding Node.js Event Loop",
+      title: "JavaScript Tutorial",
       author: "John Smith",
-      categories: ["Node.js", "JavaScript", "Backend"],
+      categories: ["JavaScript"],
       image: "/blogimg.jpg",
-      slug: "understanding-nodejs-event-loop"
+      slug: "jsTutorial"
     },
     {
       id: 3,
-      title: "Building a Full-Stack Application with Laravel",
-      author: "Emily Clarke",
-      categories: ["Laravel"],
+      title: "TypeScript Tutorial",
+      author: "ABCD",
+      categories: ["TypeScript"],
       image: "/blogimg.jpg",
-      slug: "building-full-stack-application-laravel"
+      slug: "tsTutorial"
     },
     {
       id: 4,
@@ -58,30 +58,6 @@ const sampleBlogs: Blog[] = [
       categories: ["React"],
       image: "/blogimg.jpg",
       slug: "mastering-react-hooks"
-    },
-    {
-      id: 7,
-      title: "Understanding Node.js Event Loop",
-      author: "John Smith",
-      categories: ["Node.js", "JavaScript", "Backend"],
-      image: "/blogimg.jpg",
-      slug: "understanding-nodejs-event-loop"
-    },
-    {
-      id: 8,
-      title: "Building a Full-Stack Application with Laravel",
-      author: "Emily Clarke",
-      categories: ["Laravel"],
-      image: "/blogimg.jpg",
-      slug: "building-full-stack-application-laravel"
-    },
-    {
-      id: 9,
-      title: "CSS Grid vs Flexbox: Which One to Choose?",
-      author: "David Lee",
-      categories: ["Web Design"],
-      image: "https://images.unsplash.com/photo-1521747116042-5a810fda9664",
-      slug: "css-grid-vs-flexbox"
     }
   ];
 

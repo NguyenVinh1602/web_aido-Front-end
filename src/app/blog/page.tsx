@@ -29,7 +29,7 @@ const BlogList: React.FC<{ sampleBlogs: Blog[] }> = ({ sampleBlogs }) => {
     : sampleBlogs;
 
   return (
-    <div className="container mx-auto my-20">
+    <div className="container mx-auto my-20 p-8">
       {/* Category Buttons */}
       <div className="flex flex-wrap gap-2 mb-6">
         <button

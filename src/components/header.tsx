@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { HamburgerMenuIcon } from "@radix-ui/react-icons";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import MobileNav from "./mobile-navbar";
 import { usePathname } from "next/navigation";
 import LoadingBar from "react-top-loading-bar";
@@ -22,14 +22,14 @@ export default function Header() {
 
     setTimeout(() => {
       setProgress(100);
-    }, 800);
+    }, 500);
   }, [pathname]);
 
   // This runs whenever page loads
   useEffect(() => {
     setTimeout(() => {
       setProgress(0);
-    }, 900);
+    }, 700);
   }, []);
   return (
     <header
@@ -41,6 +41,7 @@ export default function Header() {
         color="#6028ff"
         progress={progress}
         onLoaderFinished={() => setProgress(0)}
+        aria-live="polite"
       />
       <div className="container flex justify-between items-center py-2 border-b border-gray-500 backdrop-blur ">
         <Link className="text-lg font-bold md:text-xl" href={"/"}>
@@ -51,25 +52,26 @@ export default function Header() {
             <Link href={"/"}>Home</Link>
           </li>
           <li>
-            <Link href={"/about"}>About</Link>
+            <Link href={"/"}>Service</Link>
+          </li>
+          <li>
+          <Link href={"/contact"}>Contact</Link>
           </li>
           <li>
             <Link href={"/blog"}>Blog</Link>
           </li>
           <li>
-            <Link href={"/contact"}>Contact</Link>
-          </li>
-          <li>
-            <Button>
+            <Button asChild>
               <Link href={"/login"}>Reach out to us</Link>
             </Button>
           </li>
         </ul>
         <Sheet>
           <SheetTrigger>
-            <HamburgerMenuIcon className="size-6 lg:hidden" />
+            <HamburgerMenuIcon className="size-6 lg:hidden" aria-label="Open navigation menu"/>
           </SheetTrigger>
           <SheetContent>
+            <SheetTitle></SheetTitle>
             <MobileNav />
           </SheetContent>
         </Sheet>

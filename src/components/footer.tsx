@@ -46,7 +46,7 @@ export default function Footer() {
                 <Button className="text-white" variant={"link"}>
                   data@gmail.com
                 </Button>
-              </li>
+              </li>     
               <li>
                 <Button className="text-white w-full" variant={"link"}>
                   0969918064
