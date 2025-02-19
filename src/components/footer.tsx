@@ -1,82 +1,79 @@
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { FaFacebook, FaGithub, FaTelegram } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <div className="z-50 w-full h-[350px] flex justify-center bg-black text-white">
-      <div className="w-[1152px] h-auto justify-between my-10">
-        <div className="text-m w-full flex justify-between">
+    <div className="w-full h-auto z-50 bg-black p-8 flex justify-center text-white">
+      <div className="container grid lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-10">
+        <div>
           Logo
-          <div className="flex w-[12%] justify-between">
-            <div>facebook</div>
-            <div>github</div>
+          <div className="my-3">
+            175 Tay Son, <br></br> 203 C5
           </div>
+          <div className=""> © 2024 - 2025 Aido Inc.</div>
         </div>
-        <div className=" w-full flex justify-between my-6">
-          <div>
-            <Button className="h-[40px]">
-              <Link href={"/contact"}> React out to us</Link>
+
+        <ul>
+          <li className="leading-loose font-bold">Links</li>
+          <li>
+            <Button className="text-white p-0" variant={"link"}>
+              home
             </Button>
-            <div className="my-3 text-center">
-              175 Tay Son, <br></br> 203 C5
-            </div>
-          </div>
-          <div className="flex w-[20%] justify-between">
-            <ul>
-              <li className="text-center leading-loose">Links</li>
-              <li>
-                <Button className="text-white" variant={"link"}>
-                  home
-                </Button>
-              </li>
-              <li>
-                <Button className="text-white" variant={"link"}>
-                  about
-                </Button>
-              </li>
-              <li>
-                <Button className="text-white" variant={"link"}>
-                  blog
-                </Button>
-              </li>
-            </ul>
-            <ul>
-              <li className="text-center leading-loose">inquiries</li>
-              <li>
-                <Button className="text-white" variant={"link"}>
-                  data@gmail.com
-                </Button>
-              </li>     
-              <li>
-                <Button className="text-white w-full" variant={"link"}>
-                  0969918064
-                </Button>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div className="h-[1px] bg-gray-500 mx-28"></div>
-        <ul className="flex w-full justify-center items-center space-x-10 my-4">
-          <li className="text-center"> © 2024 - 2025 aido Inc.</li>
+          </li>
           <li>
-            <Link className="underline" href={"/"}>
+            <Button className="text-white p-0" variant={"link"}>
+              about
+            </Button>
+          </li>
+          <li>
+            <Button className="text-white p-0" variant={"link"}>
+              blog
+            </Button>
+          </li>
+        </ul>
+
+        <ul>
+          <li className="leading-loose font-bold">Contact</li>
+          <li>
+            <Button className="text-white p-0" variant={"link"}>
+              data@gmail.com
+            </Button>
+          </li>
+          <li>
+            <Button className="text-white p-0" variant={"link"}>
+              0969918064
+            </Button>
+          </li>
+        </ul>
+
+        <ul>
+          <li className="leading-loose font-bold">Help & Support</li>
+          <li>
+            <Button className="text-white p-0" variant={"link"}>
               Privacy Policy
-            </Link>
+            </Button>
           </li>
           <li>
-            <Link className="underline" href={"/"}>
+            <Button className="text-white p-0" variant={"link"}>
               Terms & Conditions
-            </Link>
+            </Button>
           </li>
           <li>
-            <Link className="underline" href={"/"}>
+            <Button className="text-white p-0" variant={"link"}>
               Cookie Policy
-            </Link>
+            </Button>
           </li>
           <li>
-            <Link className="underline" href={"/"}>
+            <Button className="text-white p-0" variant={"link"}>
               Cookie Settings
-            </Link>
+            </Button>
+          </li>
+        </ul>
+
+        <ul>
+          <li className="leading-loose font-bold">Social</li>
+          <li className="flex space-x-4">
+            <FaFacebook size={30} /> <FaGithub size={30}/> <FaTelegram  size={30}/>
           </li>
         </ul>
       </div>
