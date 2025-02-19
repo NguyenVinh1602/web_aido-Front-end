@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 
 export default function Footer() {
   return (
-    <div className="w-full h-[350px] absolute flex justify-center bg-black text-white">
+    <div className="w-full h-[350px] absolute  flex justify-center bg-black text-white">
       <div className="w-[1152px] h-auto justify-between my-10">
         <div className="text-m w-full flex justify-between">
           Logo
@@ -46,7 +46,7 @@ export default function Footer() {
                 <Button className="text-white" variant={"link"}>
                   data@gmail.com
                 </Button>
-              </li>
+              </li>     
               <li>
                 <Button className="text-white w-full" variant={"link"}>
                   0969918064

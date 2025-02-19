@@ -1,15 +1,14 @@
 "use client";
-import Image from "next/image";
+// import Image from "next/image";
 import Link from "next/link";
 
-import Message from "@/components/message";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 
 import "swiper/css";
 import "swiper/css/navigation";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+import { Navigation, Pagination } from "swiper/modules";
 
 import { people } from "@/config/homeContent";
 
@@ -47,7 +46,7 @@ export default function Home() {
           <h1 className="font-bold text-5xl mb-12">
             Horizontal card headline.
           </h1>
-          <div claName="w-full flex justify-between items-center">
+          <div className="w-full flex justify-between items-center">
             <img className="h-[360px]" src="test1.png" alt="test" />
             <p className="w-[460px] text-3xl font-medium text-[#000] py-4">
               Horizontal card description - this is where we describe maybe some
@@ -59,9 +58,9 @@ export default function Home() {
 
         {/* Video */}
         <div className="w-[1152px] h-screen flex justify-center items-center">
-          <img className="h-[600px] w-full" src="test1.png" alt="video" />
+          <img  className="h-[600px] w-full" src="test1.png" alt="video" />
           <p className="font-bold text-3xl absolute text-white">
-            "Content in here."
+            Content in here.
           </p>
         </div>
 

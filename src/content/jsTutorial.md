@@ -5,8 +5,6 @@ description: Comprehensive guide on learning JavaScript from basics to advanced 
 ---
 
 
-JavaScript is a versatile and powerful programming language that is essential for web development. This tutorial will cover the basics and some advanced topics in JavaScript.
-
 ## Table of Contents
 
 1. **Introduction to JavaScript**
