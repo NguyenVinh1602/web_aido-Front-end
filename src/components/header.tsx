@@ -1,8 +1,14 @@
 "use client";
 import Link from "next/link";
+import { Link as ScrollLink } from "react-scroll";
 import { Button } from "./ui/button";
 import { HamburgerMenuIcon } from "@radix-ui/react-icons";
-import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import MobileNav from "./mobile-navbar";
 import { usePathname } from "next/navigation";
 import LoadingBar from "react-top-loading-bar";
@@ -51,11 +57,18 @@ export default function Header() {
           <li>
             <Link href={"/"}>Home</Link>
           </li>
-          <li>
-            <Link href={"/"}>Service</Link>
+          <li className="cursor-pointer">
+            <ScrollLink
+              to="service"
+              smooth={true}
+              duration={800}
+              offset={-50}
+            >
+              Service
+            </ScrollLink>
           </li>
           <li>
-          <Link href={"/contact"}>Contact</Link>
+            <Link href={"/contact"}>Contact</Link>
           </li>
           <li>
             <Link href={"/blog"}>Blog</Link>
@@ -68,7 +81,10 @@ export default function Header() {
         </ul>
         <Sheet>
           <SheetTrigger>
-            <HamburgerMenuIcon className="size-6 lg:hidden" aria-label="Open navigation menu"/>
+            <HamburgerMenuIcon
+              className="size-6 lg:hidden"
+              aria-label="Open navigation menu"
+            />
           </SheetTrigger>
           <SheetContent>
             <SheetTitle></SheetTitle>

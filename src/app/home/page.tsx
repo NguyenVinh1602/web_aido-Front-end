@@ -1,5 +1,9 @@
 "use client";
-// import Image from "next/image";
+
+import { useSearchParams } from "next/navigation";
+import { useEffect } from "react";
+import { scroller } from "react-scroll";
+
 import Link from "next/link";
 import Image from "next/image";
 
@@ -14,6 +18,19 @@ import { Navigation, Pagination } from "swiper/modules";
 import { people, features, cta } from "@/config/homeContent";
 
 export default function Home() {
+  const searchParams = useSearchParams();
+  const section = searchParams.get("section");
+
+  useEffect(() => {
+    if (section) {
+      scroller.scrollTo(section, {
+        duration: 800,
+        smooth: "easeInOutQuart",
+        offset: -70,
+      });
+    }
+  }, [section]);
+
   return (
     <div className="w-full flex justify-center">
       {/* Title */}
@@ -75,16 +92,31 @@ export default function Home() {
           </p>
         </div>
 
+        {/* Servide */}
+        <div id="service" className="container p-8">
+          <div className="w-[50%] lg:w-[30%]">
+            <h1 className="font-bold text-3xl leading-relaxed lg:leading-loose lg:text-5xl">
+              Our Services
+            </h1>
+            <p className="text-lg">
+              Let us propel your business forward through expert data analysis
+              and machine learning strategies.
+            </p>
+            <hr className="border-t-2 border-gray-600 mt-8 w-[60%]" />
+          </div>
+        </div>
+
         {/* Features */}
         <div className="container space-y-8 flex flex-col justify-center items-center p-8">
           <h1 className="font-bold text-3xl">Features</h1>
           <ul className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-4">
             {features.map((feature) => (
-              <li key={feature.id} className="relative mt-4 hover:-translate-y-1">
+              <li
+                key={feature.id}
+                className="relative mt-4 hover:-translate-y-1"
+              >
                 <Avatar className="absolute -translate-y-1/2 left-6 h-14 w-14">
-                  <AvatarFallback className="bg-slate-400">
-                   
-                  </AvatarFallback>
+                  <AvatarFallback className="bg-slate-400"></AvatarFallback>
                 </Avatar>
 
                 <div className="space-y-4 bg-gray-200 p-6 pt-14 rounded-[20px] ">
