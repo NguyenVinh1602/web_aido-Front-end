@@ -54,10 +54,8 @@ export default function Header() {
           AIdo.
         </Link>
         <ul className="hidden lg:flex w-full justify-end items-center space-x-12">
-          <li>
-            <Link href={"/"}>Home</Link>
-          </li>
           <li className="cursor-pointer">
+            {isHome ? 
             <ScrollLink
               to="service"
               smooth={true}
@@ -66,6 +64,9 @@ export default function Header() {
             >
               Service
             </ScrollLink>
+            :
+              <Link href={"/home?section=service"}>Service</Link>
+            }
           </li>
           <li>
             <Link href={"/contact"}>Contact</Link>

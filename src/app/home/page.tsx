@@ -94,7 +94,7 @@ export default function Home() {
 
         {/* Servide */}
         <div id="service" className="container p-8">
-          <div className="w-[50%] lg:w-[30%]">
+          <div className="w-full md:w-[50%] lg:w-[30%]">
             <h1 className="font-bold text-3xl leading-relaxed lg:leading-loose lg:text-5xl">
               Our Services
             </h1>
@@ -144,7 +144,6 @@ export default function Home() {
             className="container custom-swiper"
             // install Swiper modules
             modules={[Pagination, Navigation]}
-            navigation={true}
             pagination={{ clickable: true }}
             breakpoints={{
               320: { slidesPerView: 1, spaceBetween: 10 }, // Mobile
