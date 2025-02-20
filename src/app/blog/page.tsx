@@ -14,9 +14,6 @@ interface Blog {
   slug: string;
 }
 
-// const dirContent = fs.readFileSync('content', 'utf-8')
-// console.log(dirContent);
-
 const BlogList: React.FC<{ sampleBlogs: Blog[] }> = ({ sampleBlogs }) => {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
@@ -34,7 +31,7 @@ const BlogList: React.FC<{ sampleBlogs: Blog[] }> = ({ sampleBlogs }) => {
       <div className="flex flex-wrap gap-2 mb-6">
         <button
           onClick={() => setSelectedCategory(null)}
-          className={`px-4 py-2 rounded-full ${!selectedCategory ? "bg-black text-white" : "border border-gray-300"}`}
+          className={`px-4 py-2 rounded-full transition-transform transform hover:scale-105 ${!selectedCategory ? "bg-black text-white" : "border border-gray-300"}`}
         >
           All articles
         </button>
@@ -42,7 +39,7 @@ const BlogList: React.FC<{ sampleBlogs: Blog[] }> = ({ sampleBlogs }) => {
           <button
             key={category}
             onClick={() => setSelectedCategory(category)}
-            className={`px-4 py-2 rounded-full ${selectedCategory === category ? "bg-black text-white" : "border border-gray-300"}`}
+            className={`px-4 py-2 rounded-full transition-transform transform hover:scale-105 ${selectedCategory === category ? "bg-black text-white" : "border border-gray-300"}`}
           >
             {category}
           </button>
@@ -52,7 +49,7 @@ const BlogList: React.FC<{ sampleBlogs: Blog[] }> = ({ sampleBlogs }) => {
       {/* Blog Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredBlogs.map((blog) => (
-          <div key={blog.id} className="border rounded-lg overflow-hidden shadow-md">
+          <div key={blog.id} className="border rounded-lg overflow-hidden shadow-md transition-transform transform hover:scale-105">
             <Image src={blog.image?blog.image : "/blogimg.jpg"} alt={blog.title} width={400} height={300} className="w-full h-64 object-cover" loading="lazy" />
             <div className="p-4">
               <div className="flex gap-2 mb-2">
