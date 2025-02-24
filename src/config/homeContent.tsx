@@ -102,5 +102,6 @@ export const features: Feature[] = [
 
 export const cta ={
     "title" : "Ready to leverage your data for success?",
-    "content": "Contact us for a personalized strategy that drives your business forward."
+    "content": "Contact us for a personalized strategy that drives your business forward.",
+    "highlightWords": ["personalized","drives","your","business","forward."]
 };
