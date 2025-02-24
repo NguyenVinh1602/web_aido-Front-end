@@ -14,7 +14,7 @@ export default function Footer() {
         </div>
 
         <ul>
-          <li className="leading-loose font-bold">Links</li>
+          <li className="leading-loose font-bold text-xl md:text-lg">Links</li>
           <li>
             <Button className="text-white p-0" variant={"link"}>
               home
@@ -33,7 +33,7 @@ export default function Footer() {
         </ul>
 
         <ul>
-          <li className="leading-loose font-bold">Contact</li>
+          <li className="leading-loose font-bold text-xl md:text-lg">Contact</li>
           <li>
             <Button className="text-white p-0" variant={"link"}>
               data@gmail.com
@@ -47,7 +47,7 @@ export default function Footer() {
         </ul>
 
         <ul>
-          <li className="leading-loose font-bold">Help & Support</li>
+          <li className="leading-loose font-bold text-xl md:text-lg">Help & Support</li>
           <li>
             <Button className="text-white p-0" variant={"link"}>
               Privacy Policy
@@ -71,8 +71,8 @@ export default function Footer() {
         </ul>
 
         <ul>
-          <li className="leading-loose font-bold">Social</li>
-          <li className="flex space-x-4">
+          <li className="leading-loose font-bold text-xl md:text-lg">Social</li>
+          <li className="flex space-x-4 mt-2">
             <FaFacebook size={30} /> <FaGithub size={30}/> <FaTelegram  size={30}/>
           </li>
         </ul>
