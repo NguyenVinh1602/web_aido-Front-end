@@ -18,6 +18,7 @@ import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import ScrollColorText from "@/components/ScrollColorText";
 import BounceText from "@/components/BounceText";
+import ParticlesEffect from "@/components/ParticlesEffect";
 
 import { people, features, cta } from "@/config/homeContent";
 
@@ -89,7 +90,7 @@ export default function Home() {
       {/* Title */}
       <div className="container fixed z-0 min-h-screen grid lg:grid-cols-2 place-items-center md:pt-12 md:pb-24 p-8">
         <div className="py-6 lg:order-1 hidden md:block">
-          <Image src="/test1.png" alt="test" width={540} height={300} />
+        <ParticlesEffect/>
         </div>
         <div className="h-auto space-y-4">
           <BounceText
