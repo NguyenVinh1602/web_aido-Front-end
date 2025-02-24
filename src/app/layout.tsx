@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-p-20 scroll-smooth">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden`}>
-        <div className="min-h-screen flex flex-col justify-between">
+        <div className="flex flex-col justify-between">
           <Header/>
           <main>
             {children}

@@ -15,7 +15,7 @@ const sampleBlogs: Blog[] = [
       title: "Mastering React Hooks",
       author: "Jane Doe",
       categories: ["React"],
-      image: "/blogimg.jpg",
+      image: "",
       slug: "mastering-react-hooks",
       content: "a"
     },

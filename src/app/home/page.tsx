@@ -88,7 +88,7 @@ export default function Home() {
             className="max-h-[75%]"
           />
           <p className="font-bold text-white text-lg md:text-2xl lg:text-3xl absolute text-center px-4">
-            "Content in here."
+            &quot;Content in here.&quot;
           </p>
         </div>
 
