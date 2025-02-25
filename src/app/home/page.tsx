@@ -3,7 +3,6 @@
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { scroller } from "react-scroll";
-import { useInView } from "react-intersection-observer";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -12,7 +11,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
-import { motion, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
