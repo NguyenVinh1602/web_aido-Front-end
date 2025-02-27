@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import sampleBlogs from "@/config/sampleblogs";
+import ScrollColorText from "@/components/ScrollColorText";
 
 interface Blog {
   id: number;
@@ -17,11 +18,17 @@ interface Blog {
 const BlogList: React.FC<{ sampleBlogs: Blog[] }> = ({ sampleBlogs }) => {
   return (
     <motion.div
-      className="container mx-auto my-12 p-8"
+      className="container mx-auto p-8"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
     >
+      <ScrollColorText 
+        className="text-3xl font-bold mb-6 justify-center text-center"
+        text="Our Blogs"
+        highlightWords={["Blogs"]} 
+        highlightColor="#60a5fa"
+        ></ScrollColorText>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {sampleBlogs.map((blog, index) => {
           const animationProps =
@@ -43,8 +50,8 @@ const BlogList: React.FC<{ sampleBlogs: Blog[] }> = ({ sampleBlogs }) => {
                 <Image
                   src={blog.image ? blog.image : "/blogimg.jpg"}
                   alt={blog.title}
-                  width={400}
-                  height={300}
+                  width={250}
+                  height={100}
                   className="w-full h-64 object-cover"
                   loading="lazy"
                 />

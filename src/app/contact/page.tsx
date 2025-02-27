@@ -6,8 +6,7 @@ import { z } from "zod";
 import {
   Card,
   CardDescription,
-  CardHeader,
-  CardTitle,
+  CardHeader
 } from "@/components/ui/card";
 import {
   Form,
@@ -22,6 +21,7 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import { motion } from "framer-motion";
+import ScrollColorText from "@/components/ScrollColorText";
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
@@ -47,13 +47,13 @@ export default function ContactUs() {
     console.log(values);
   }
   const formVariants = {
-    hidden: { x: -100, opacity: 0 }, // Start position (left)
-    visible: { x: 0, opacity: 1, transition: { duration: 0.8 } }, // End position
+    hidden: { x: -100, opacity: 0 }, 
+    visible: { x: 0, opacity: 1, transition: { duration: 0.8 } }, 
   };
   
   const mapVariants = {
-    hidden: { x: 100, opacity: 0 }, // Start position (right)
-    visible: { x: 0, opacity: 1, transition: { duration: 0.8 } }, // End position
+    hidden: { x: 100, opacity: 0 }, 
+    visible: { x: 0, opacity: 1, transition: { duration: 0.8 } }, 
   };  
 
 return (
@@ -68,7 +68,13 @@ return (
       >
         <Card>
           <CardHeader>
-            <CardTitle className="text-3xl font-bold">Get In Touch</CardTitle>
+            <ScrollColorText
+              className="text-3xl font-bold"
+              text="Get in Touch"
+              highlightWords={["in", "Touch"]}
+              highlightColor="#60a5fa"
+            >  
+              </ScrollColorText>
             <CardDescription className="text-lg">
               We transform data into a strategic advantage for your business.
               Complete the form below to learn more!
