@@ -3,7 +3,7 @@
 import { useCallback } from "react";
 import { loadSlim } from "tsparticles-slim";
 import Particles from "react-tsparticles";
-import type { Engine, Container } from "tsparticles-engine";
+import type { Engine } from "tsparticles-engine";
 
 const ParticlesEffect = () => {
   const particlesInit = useCallback(async (engine: Engine) => {

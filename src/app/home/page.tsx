@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 import { scroller } from "react-scroll";
 
 import Link from "next/link";
-import Image from "next/image";
 
 import "swiper/css";
 import "swiper/css/navigation";
