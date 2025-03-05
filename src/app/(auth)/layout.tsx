@@ -2,6 +2,8 @@ import "@/app/globals.css";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import SiteConfig from "@/config/site";
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
+import { AppSidebar } from "@/components/app-sidebar"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,16 +23,18 @@ export const metadata: Metadata = {
 
 const isClient = typeof window !== "undefined";
 
-export default function MarketingLayout({
+export default function AuthLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="mdl-js">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <main>{children}</main>
-      </body>
-    </html>
+    <SidebarProvider>
+    <AppSidebar />
+    <main>
+      <SidebarTrigger />
+      {children}
+    </main>
+  </SidebarProvider>
   );
 }

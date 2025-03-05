@@ -2,6 +2,7 @@
 
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 
 interface BounceTextProps {
   text: string;
@@ -10,19 +11,23 @@ interface BounceTextProps {
 
 export default function BounceText({ text, className = "" }: BounceTextProps) {
   const controls = useAnimation();
+  const { ref, inView } = useInView({ triggerOnce: true });
 
   useEffect(() => {
-    controls.start("visible");
-  }, [controls]);
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [inView, controls]);
 
   return (
     <motion.h1 
+      ref={ref}
       className={className} 
-      style={{display: "flex", gap: "4px", flexWrap: "wrap" }}
+      style={{ display: "flex", gap: "4px", flexWrap: "wrap" }}
       initial="hidden"
       animate={controls}
       variants={{
-        visible: { transition: { staggerChildren: 0.1 } },
+        visible: { transition: { staggerChildren: 0.2 } },
       }}
     >
       {text.split(" ").map((word, index) => (
@@ -31,11 +36,11 @@ export default function BounceText({ text, className = "" }: BounceTextProps) {
           initial="hidden"
           animate={controls}
           variants={{
-            hidden: { opacity: 0, y: 20 }, // Bắt đầu mờ và thấp hơn
+            hidden: { opacity: 0, y: 20 },
             visible: { 
               opacity: 1, 
-              y: [20, 0], // Nhảy lên
-              transition: { type: "spring", stiffness: 300, damping: 10 }
+              y: [20, 0],
+              transition: { type: "spring", stiffness: 300, damping: 20 }
             },
           }}
           style={{ whiteSpace: "nowrap", display: "inline-block" }}

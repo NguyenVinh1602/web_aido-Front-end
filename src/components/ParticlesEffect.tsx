@@ -11,7 +11,7 @@ const ParticlesEffect = () => {
   }, []);
 
   return (
-    <div className="relative w-[500px] h-[500px] overflow-hidden">
+    <div className="relative w-[550px] h-[500px] overflow-hidden">
       <Particles
         id="tsparticles"
         className="absolute inset-0"
@@ -20,11 +20,11 @@ const ParticlesEffect = () => {
           fullScreen: false, // Không chiếm toàn màn hình
           background: { color: "transparent" },
           particles: {
-            number: { value: 230, density: { enable: true, value_area: 1000 } }, // Tăng value_area để phủ kín vùng
+            number: { value: 250, density: { enable: true, value_area: 1000 } }, // Tăng value_area để phủ kín vùng
             color: { value: "#60a5fa" }, // Chấm màu đen
             shape: { type: "circle" },
-            opacity: { value: 0.4 },
-            size: { value: 3 },
+            opacity: { value: 0.8 },
+            size: { value: 2 },
             move: {
               enable: true,
               speed: 1,

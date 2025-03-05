@@ -39,7 +39,7 @@ const formSchema = z.object({
 export default function ContactUs() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
-    defaultValues: { name: "", email: "", phone: "", message: "" },
+    defaultValues: { name: "", email: "", phone: "" },
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {

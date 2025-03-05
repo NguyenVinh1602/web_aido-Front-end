@@ -8,10 +8,6 @@ import { useInView } from "react-intersection-observer";
 import Link from "next/link";
 import Image from "next/image";
 
-import "swiper/css";
-import "swiper/css/navigation";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
 import { motion, useAnimation } from "framer-motion";
 
 import { Button } from "@/components/ui/button";
@@ -19,6 +15,13 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import ScrollColorText from "@/components/ScrollColorText";
 import BounceText from "@/components/BounceText";
 import ParticlesEffect from "@/components/ParticlesEffect";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+} from "@/components/ui/carousel";
 
 import { people, features, cta } from "@/config/homeContent";
 
@@ -90,12 +93,12 @@ export default function Home() {
       {/* Title */}
       <div className="container fixed z-0 min-h-screen grid lg:grid-cols-2 place-items-center md:pt-12 md:pb-24 p-8">
         <div className="py-6 lg:order-1 hidden md:block">
-        <ParticlesEffect/>
+          <ParticlesEffect />
         </div>
-        <div className="h-auto space-y-4">
+        <div className="h-auto space-y-6">
           <BounceText
-            className="text-4xl lg:text-5xl xl:text-6xl font-bold w-full"
-            text=" Title - Website Headline." 
+            className="text-4xl lg:text-5xl xl:text-7xl font-bold w-full"
+            text=" Title - Website Headline."
           />
           <p className="text-lg mt-4 text-slate-600 max-w-xl">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
@@ -111,6 +114,7 @@ export default function Home() {
               Learn more
             </Link>
           </Button>
+          <hr className="border-t-1 border-gray-500 w-[50%]" />
         </div>
       </div>
       {/* Content */}
@@ -196,7 +200,7 @@ export default function Home() {
 
         {/* Features */}
         <div className="container space-y-8 flex flex-col justify-center items-center p-8">
-          <h1 className="font-bold text-5xl">Features</h1>
+          <BounceText className="text-4xl font-bold " text="Features" />
           <ul className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-4">
             {features.map((feature) => (
               <li
@@ -227,38 +231,33 @@ export default function Home() {
 
         {/* List member */}
         <div className="w-full space-y-16 flex flex-col justify-center items-center bg-gray-200 pt-16 p-8">
-          <h1 className="font-bold text-3xl text-center">Hear from our customers</h1>
-          <Swiper
-            className="container custom-swiper"
-            // install Swiper modules
-            modules={[Pagination, Navigation]}
-            pagination={{ clickable: true }}
-            breakpoints={{
-              320: { slidesPerView: 1, spaceBetween: 10 }, // Mobile
-              640: { slidesPerView: 2, spaceBetween: 20 }, // Tablet
-              1024: { slidesPerView: 3, spaceBetween: 30 }, // Desktop
-            }}
-          >
-            {people.map((person) => (
-              <SwiperSlide
-                key={person.name}
-                className="bg-white p-4 rounded-[20px]"
-              >
-                <div className="w-full h-full flex flex-col justify-center items-center space-y-2">
-                  <Avatar className="h-20 w-20">
-                    <AvatarFallback className="bg-slate-400">
-                      {person.name}
-                    </AvatarFallback>
-                  </Avatar>
-                  <p className="text-gray-500">{person.content}</p>
-                  <h1 className="text-lg font-bold">{person.name}</h1>
-                  <p className="text-sm font-bold text-blue-400">
-                    {person.title}
-                  </p>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+          <h1 className="font-bold text-3xl text-center">
+            Hear from our customers
+          </h1>
+
+          <Carousel className="container">
+            <CarouselContent className="-ml-1">
+              {people.map((person) => (
+                <CarouselItem
+                  key={person.name}
+                  className=" sm:basis-full md:basis-1/2 lg:basis-1/3 select-none"
+                >
+                  <div className="bg-white h-full p-4 rounded-[20px] flex flex-col justify-center items-center space-y-2">
+                    <Avatar className="h-20 w-20">
+                      <AvatarFallback className="bg-slate-400">
+                        {person.name}
+                      </AvatarFallback>
+                    </Avatar>
+                    <p className="text-gray-500">{person.content}</p>
+                    <h1 className="text-lg font-bold">{person.name}</h1>
+                    <p className="text-sm font-bold text-blue-400">
+                      {person.title}
+                    </p>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
         </div>
 
         {/* Call to Action */}

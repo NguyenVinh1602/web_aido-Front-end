@@ -1,6 +1,8 @@
 import "@/app/globals.css";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import SiteConfig from "@/config/site";
 
 const geistSans = Geist({
@@ -27,10 +29,14 @@ export default function MarketingLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="mdl-js">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <main>{children}</main>
-      </body>
-    </html>
+      <section className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden scroll-p-20 scroll-smooth`}>
+        <div className="min-h-screen flex flex-col justify-between">
+          <Header/>
+          <div>
+            {children}
+          </div>
+          <Footer/>
+        </div>
+      </section>
   );
 }
