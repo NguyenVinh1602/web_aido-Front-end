@@ -1,4 +1,3 @@
-import { title } from "process";
 
 // Define data type
 interface Person {

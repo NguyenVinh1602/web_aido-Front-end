@@ -12,11 +12,11 @@ interface Blog {
 const sampleBlogs: Blog[] = [
     {
       id: 1,
-      title: "Mastering React Hooks",
+      title: "JavaScript Tutorial",
       author: "Jane Doe",
       categories: ["React"],
-      image: "/blogimg.jpg",
-      slug: "mastering-react-hooks",
+      image: "",
+      slug: "jsTutorial",
       content: "a"
     },
     {
@@ -37,28 +37,29 @@ const sampleBlogs: Blog[] = [
     },
     {
       id: 4,
-      title: "CSS Grid vs Flexbox: Which One to Choose?",
-      author: "David Lee",
-      categories: ["Web Design"],
-      image: "https://images.unsplash.com/photo-1521747116042-5a810fda9664",
-      slug: "css-grid-vs-flexbox"
+      title: "JavaScript Tutorial",
+      author: "Jane Doe",
+      categories: ["React"],
+      image: "",
+      slug: "jsTutorial",
+      content: "a"
     },
     {
       id: 5,
-      title: "Introduction to Python for Data Science",
-      author: "Sarah Adams",
-      categories: ["Data Science"],
-      image: "https://images.unsplash.com/photo-1521747116042-5a810fda9664",
-      slug: "introduction-python-data-science"
+      title: "JavaScript Tutorial",
+      author: "John Smith",
+      categories: ["JavaScript"],
+      image: "/blogimg.jpg",
+      slug: "jsTutorial"
     },
     {
       id: 6,
-      title: "Mastering React Hooks",
-      author: "Jane Doe",
-      categories: ["React"],
+      title: "TypeScript Tutorial",
+      author: "ABCD",
+      categories: ["TypeScript"],
       image: "/blogimg.jpg",
-      slug: "mastering-react-hooks"
-    }
+      slug: "tsTutorial"
+    },
   ];
 
 export default sampleBlogs

@@ -3,8 +3,6 @@
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { scroller } from "react-scroll";
-import { useInView } from "react-intersection-observer";
-
 import Link from "next/link";
 import Image from "next/image";
 
