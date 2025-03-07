@@ -1,4 +1,4 @@
-import Home from "./home/page";
+import Home from "./dashboard/page";
 export default function Admin() {
   return (
     <div>
