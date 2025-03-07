@@ -29,6 +29,8 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import { format } from "date-fns";
+
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
@@ -56,92 +58,107 @@ export default function Account() {
   }
 
   return (
-    <div className="container flex flex-col h-full p-6">
+    <div className="container flex flex-col h-screen p-6 pl-0">
       <Card className="w-full">
         <CardHeader>
           <CardTitle>Admin Profile</CardTitle>
         </CardHeader>
-        <CardContent>
+        <CardContent className="space-y-10">
           <Avatar className="h-20 w-20">
             <AvatarImage src="https://github.com/shadcn.png" />
             <AvatarFallback>CN</AvatarFallback>
           </Avatar>
 
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-              {/** Render Form Fields */}
-              {["name", "email", "phone", "joined"].map((fieldName) => (
-                <FormField
-                  key={fieldName}
-                  control={form.control}
-                  name={fieldName as keyof z.infer<typeof formSchema>}
-                  render={({ field }) => (
-                    <FormItem>
-                      <div className="relative">
-                        <FormLabel
-                          className="text-black text-m block m-2"
-                          style={{ lineHeight: "0.7rem" }}
-                        >
-                          {fieldName.charAt(0).toUpperCase() +
-                            fieldName.slice(1)}
-                        </FormLabel>
-                        {fieldName === "joined" ? (
-                          <Popover>
-                            <PopoverTrigger asChild>
-                              <FormControl>
-                                <Button
-                                  variant={"outline"}
-                                  className={cn(
-                                    "w-[240px] pl-3 text-left font-normal",
-                                    !field.value && "text-muted-foreground"
-                                  )}
-                                >
-                                  {field.value ? (
-                                    format(field.value, "PPP")
-                                  ) : (
-                                    <span>Pick a date</span>
-                                  )}
-                                  <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
-                                </Button>
-                              </FormControl>
-                            </PopoverTrigger>
-                            <PopoverContent
-                              className="w-auto p-0"
-                              align="start"
-                            >
-                              <Calendar
-                                mode="single"
-                                selected={field.value}
-                                onSelect={field.onChange}
-                                disabled={(date) =>
-                                  date > new Date() ||
-                                  date < new Date("1900-01-01")
-                                }
-                                initialFocus
-                              />
-                            </PopoverContent>
-                          </Popover>
-                        ) : (
-                          <FormControl>
-                            <Input
-                              {...field}
-                              disabled
-                              className="w-full bg-white text-black border border-gray-400 focus:outline-none focus:ring focus:ring-orange-500 py-5"
-                              autoComplete="off"
-                            />
-                          </FormControl>
-                        )}
-                      </div>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-              ))}
+            <form
+              onSubmit={form.handleSubmit(onSubmit)}
+              className="space-y-4 bg-white rounded-lg shadow-md"
+            >
+              {/* Họ tên */}
+              <FormField
+                control={form.control}
+                name="name"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Name</FormLabel>
+                    <FormControl>
+                      <Input placeholder="Nhập họ tên" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              {/* Số điện thoại */}
+              <FormField
+                control={form.control}
+                name="phone"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Phone</FormLabel>
+                    <FormControl>
+                      <Input placeholder="Nhập số điện thoại" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              {/* Email */}
+              <FormField
+                control={form.control}
+                name="email"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Email</FormLabel>
+                    <FormControl>
+                      <Input placeholder="Nhập email" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              {/* Ngày tham gia */}
+              <FormField
+                control={form.control}
+                name="joined"
+                render={({ field }) => (
+                  <FormItem className="flex flex-col">
+                    <FormLabel>Joined On</FormLabel>
+                    <Popover>
+                      <PopoverTrigger asChild>
+                        <FormControl>
+                          <Button
+                            variant="outline"
+                            className="w-full justify-start text-left"
+                          >
+                            {field.value
+                              ? format(field.value, "dd/MM/yyyy")
+                              : "Chọn ngày"}
+                            <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
+                          </Button>
+                        </FormControl>
+                      </PopoverTrigger>
+                      <PopoverContent align="start">
+                        <Calendar
+                          mode="single"
+                          selected={field.value}
+                          onSelect={field.onChange}
+                        />
+                      </PopoverContent>
+                    </Popover>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              {/* Nút Submit */}
               {/* <Button
-                className="w-full bg-black hover:opacity-95 text-white text-sm py-5"
                 type="submit"
+                className="w-full"
               >
-                Submit
+                Gửi Form
               </Button> */}
             </form>
           </Form>

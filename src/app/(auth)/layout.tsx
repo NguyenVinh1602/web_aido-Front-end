@@ -31,10 +31,8 @@ export default function AuthLayout({
   return (
     <SidebarProvider>
     <AppSidebar />
-    <main>
       <SidebarTrigger />
       {children}
-    </main>
   </SidebarProvider>
   );
 }

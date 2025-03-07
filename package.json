@@ -37,6 +37,7 @@
     "react-scroll": "^1.9.3",
     "react-top-loading-bar": "^3.0.2",
     "react-tsparticles": "^2.12.2",
+    "recharts": "^2.15.1",
     "rehype-autolink-headings": "^7.1.0",
     "rehype-highlight": "^7.0.2",
     "rehype-pretty-code": "^0.14.0",
