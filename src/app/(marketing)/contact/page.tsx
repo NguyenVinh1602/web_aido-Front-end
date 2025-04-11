@@ -59,7 +59,6 @@ export default function ContactUs() {
 return (
   <MaxWidthWrapper className="px-8">
     <div className="flex justify-between items-center flex-wrap-reverse md:flex-nowrap gap-12">
-      {/* Contact Form with Animation */}
       <motion.div
         className="max-w-sm w-full mx-auto"
         variants={formVariants}

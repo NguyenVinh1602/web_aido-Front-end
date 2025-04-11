@@ -1,0 +1,81 @@
+{
+  "blogs": [
+    {
+      "id": "1",
+      "title": "JavaScript Tutorial",
+      "author": "Jane Doe",
+      "categories": [
+        "React"
+      ],
+      "image": "",
+      "slug": "jsTutorial",
+      "content": "<p>abcdefggh</p>"
+    },
+    {
+      "id": "2",
+      "title": "JavaScript Tutorial",
+      "author": "Jane Smith",
+      "categories": [
+        "JavaScript"
+      ],
+      "image": "/blogimg.jpg",
+      "slug": "jsTutorial"
+    },
+    {
+      "id": "3",
+      "title": "TypeScript Tutorial",
+      "author": "Jane ABCD",
+      "categories": [
+        "TypeScript"
+      ],
+      "image": "/blogimg.jpg",
+      "slug": "tsTutorial"
+    },
+    {
+      "id": "4",
+      "title": "JavaScript Tutorial",
+      "author": "Jane Doe",
+      "categories": [
+        "React"
+      ],
+      "image": "",
+      "slug": "jsTutorial"
+    },
+    {
+      "id": "5",
+      "title": "JavaScript Tutorial",
+      "author": "Jane Smith",
+      "categories": [
+        "JavaScript"
+      ],
+      "image": "/blogimg.jpg",
+      "slug": "jsTutorial"
+    },
+    {
+      "id": "6",
+      "title": "TypeScript Tutorial",
+      "author": "Jane ABCD",
+      "categories": [
+        "TypeScript"
+      ],
+      "image": "/blogimg.jpg",
+      "slug": "tsTutorial"
+    },
+    {
+      "id": "20d1a209-a8da-4ed2-aa90-b27ee846d021",
+      "title": "abbbbb",
+      "author": "abbbbbb",
+      "categories": "abbbbb",
+      "slug": "aaaaaa",
+      "content": "<p>a</p>"
+    },
+    {
+      "id": "0813f3c0-fe8a-4e4c-b425-3e680a52f9ea",
+      "title": "Hello World!",
+      "author": "Hello World!",
+      "categories": "Hello World!",
+      "slug": "Heaaaaaa",
+      "content": "<p>Hello World!</p>"
+    }
+  ]
+}

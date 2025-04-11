@@ -1,8 +1,9 @@
-import Home from "./dashboard/page";
-export default function Admin() {
+import React from 'react'
+
+function adminpage() {
   return (
-    <div>
-        <Home/>
-    </div>
-  );
+    <div>this is admin page</div>
+  )
 }
+
+export default adminpage

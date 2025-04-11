@@ -39,8 +39,8 @@ export default async function BlogPost({ params } : { params: { slug: string } }
         <MaxWidthWrapper className='prose'>
             <div className="flex">
                 <div className="px-16" >
-                    <h1>{data.title}</h1>
-                    <div dangerouslySetInnerHTML={{__html: htmlContent}}></div>
+                  <h1>{data.title}</h1>
+                  <div dangerouslySetInnerHTML={{__html: htmlContent}}></div>
                 </div>
                 <OnThisPage className='text-sm w-[40%]' htmlContent={htmlContent}/>
             </div>

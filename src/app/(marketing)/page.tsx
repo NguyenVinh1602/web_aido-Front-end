@@ -1,10 +1,9 @@
+import Home from "./home/page"
 
-import Home from "./home/page";
-
-export default function Landing() {
-  return (
-    <div>
-      <Home />
-    </div>
-  );
+export default function page() {
+    return (
+        <>
+            <Home/>
+        </>
+    )
 }

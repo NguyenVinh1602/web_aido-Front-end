@@ -4,9 +4,8 @@ import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { scroller } from "react-scroll";
 import Link from "next/link";
-import Image from "next/image";
 
-import { motion, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
@@ -17,8 +16,6 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselPrevious,
-  CarouselNext,
 } from "@/components/ui/carousel";
 
 import { people, features, cta } from "@/config/homeContent";
